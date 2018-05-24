@@ -1,0 +1,18 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: eureka-gateway
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+zuul:
+  routes:
+    service-a:
+      path: /service-a/** # 配置路由规则
+    service-b:
+      path: /service-b/** # 配置路由规则

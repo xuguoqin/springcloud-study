@@ -1,0 +1,18 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: service-b
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+      prefer-ip-address: true
+
+swagger:
+  base-package: com.xaq # swagger 扫描包
