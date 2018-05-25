@@ -1,0 +1,20 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: service-config-client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: service-config
+      profile: base
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
